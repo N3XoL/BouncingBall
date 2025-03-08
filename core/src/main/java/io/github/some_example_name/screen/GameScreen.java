@@ -21,8 +21,8 @@ import static io.github.some_example_name.BouncingBallGame.WORLD_HEIGHT;
 import static io.github.some_example_name.BouncingBallGame.WORLD_WIDTH;
 
 public class GameScreen extends ScreenAdapter {
-    public final static float PADDLE_WIDTH = 100;
-    public final static float PADDLE_HEIGHT = 20;
+    public final static float PADDLE_WIDTH = 100f;
+    public final static float PADDLE_HEIGHT = 20f;
 
     public final static float BALL_RADIUS = 8f;
     public final static float BALL_X_SPEED = 400f;
@@ -33,7 +33,7 @@ public class GameScreen extends ScreenAdapter {
 
     public final static float BLOCK_WIDTH = 81f;
     public final static float BLOCK_HEIGHT = 23f;
-    public final static float BLOCK_SPACE_BETWEEN = 5;
+    public final static float BLOCK_SPACE_BETWEEN = 5f;
 
     final BouncingBallGame game;
     SpriteBatch batch;
@@ -57,8 +57,13 @@ public class GameScreen extends ScreenAdapter {
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
         blocks = new Array<>();
-        paddle = new Paddle(WORLD_WIDTH / 2 - 50, 10, PADDLE_WIDTH, PADDLE_HEIGHT);
-        ball = new Ball(WORLD_WIDTH / 2, 33, BALL_RADIUS, BALL_X_SPEED, BALL_Y_SPEED);
+        paddle = new Paddle(WORLD_WIDTH / 2 - PADDLE_WIDTH / 2, 10, PADDLE_WIDTH, PADDLE_HEIGHT);
+        ball = new Ball(
+            WORLD_WIDTH / 2,
+            paddle.getBounds().y + paddle.getBounds().height + BALL_RADIUS,
+            BALL_RADIUS,
+            BALL_X_SPEED, BALL_Y_SPEED
+        );
         shootingUpgrade = new ShootingUpgrade(UPGRADE_X_SPEED, UPGRADE_Y_SPEED);
 
         backgroundTexture = new Texture("background.png");
