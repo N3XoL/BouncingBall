@@ -9,8 +9,8 @@ import com.badlogic.gdx.math.Rectangle;
 public class Block {
     private final Rectangle bounds;
 
-    Texture texture;
-    Sprite textureSprite;
+    private final Texture texture;
+    private final Sprite textureSprite;
 
     public Block(float x, float y, float width, float height) {
         this.bounds = new Rectangle(x, y, width, height);
@@ -51,6 +51,10 @@ public class Block {
             return true;
         }
         return false;
+    }
+
+    public Texture getTexture() {
+        return texture;
     }
 
     public Rectangle getBounds() {

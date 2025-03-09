@@ -1,11 +1,9 @@
 package io.github.some_example_name.model;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
@@ -16,8 +14,8 @@ public class Paddle {
     private final Rectangle bounds;
     private final Vector2 touchPos;
 
-    Texture texture;
-    Sprite sprite;
+    private final Texture texture;
+    private final Sprite sprite;
 
     public Paddle(float x, float y, float width, float height) {
         this.bounds = new Rectangle(x, y, width, height);
@@ -57,6 +55,10 @@ public class Paddle {
             velocity.x = speed * MathUtils.sin(bounceAngle);
             velocity.y = Math.abs(speed * MathUtils.cos(bounceAngle));
         }
+    }
+
+    public Texture getTexture() {
+        return texture;
     }
 
     public Rectangle getBounds() {

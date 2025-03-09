@@ -12,8 +12,8 @@ public class Ball {
     private final Circle bounds;
     private final Vector2 velocity;
 
-    Texture texture;
-    Sprite sprite;
+    private final Texture texture;
+    private final Sprite sprite;
 
     public Ball(float x, float y, float radius, float xSpeed, float ySpeed) {
         this.bounds = new Circle(x, y, radius);
@@ -58,5 +58,9 @@ public class Ball {
 
     public Vector2 getVelocity() {
         return velocity;
+    }
+
+    public Texture getTexture() {
+        return texture;
     }
 }

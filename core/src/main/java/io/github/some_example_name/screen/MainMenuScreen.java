@@ -1,7 +1,6 @@
 package io.github.some_example_name.screen;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,13 +11,13 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import io.github.some_example_name.BouncingBallGame;
 
 public class MainMenuScreen extends ScreenAdapter {
-    final BouncingBallGame game;
-    Texture background;
-    Texture playButton;
-    Sprite backgroundSprite;
-    Sprite playButtonSprite;
-    Vector2 touchPos;
-    Rectangle bounds;
+    private final  BouncingBallGame game;
+    private final Texture background;
+    private final Texture playButton;
+    private final Sprite backgroundSprite;
+    private final Sprite playButtonSprite;
+    private final Vector2 touchPos;
+    private final Rectangle bounds;
 
     public MainMenuScreen(BouncingBallGame game) {
         this.game = game;

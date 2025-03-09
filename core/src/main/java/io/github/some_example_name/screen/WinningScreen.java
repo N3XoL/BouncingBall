@@ -11,11 +11,11 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import io.github.some_example_name.BouncingBallGame;
 
 public class WinningScreen extends ScreenAdapter {
-    final BouncingBallGame game;
+    private final BouncingBallGame game;
 
-    Texture winningTexture;
-    Sprite winningSprite;
-    Viewport viewport;
+    private final Texture winningTexture;
+    private final Sprite winningSprite;
+    private final Viewport viewport;
 
     public WinningScreen(BouncingBallGame game) {
         this.game = game;

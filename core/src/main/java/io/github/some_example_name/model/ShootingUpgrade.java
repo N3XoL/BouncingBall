@@ -11,20 +11,20 @@ import com.badlogic.gdx.utils.Array;
 import io.github.some_example_name.BouncingBallGame;
 
 public class ShootingUpgrade {
-    public final static float ICON_WIDTH = 10;
-    public final static float ICON_HEIGHT = 30;
+    private final static float ICON_WIDTH = 10;
+    private final static float ICON_HEIGHT = 30;
 
-    public final static float PROJECTILE_RADIUS = 5;
+    private final static float PROJECTILE_RADIUS = 5;
 
-    Array<Circle> projectiles;
-    Vector2 velocity;
+    private final Array<Circle> projectiles;
+    private final Vector2 velocity;
+
+    private final Texture texture;
+    private final Sprite textureSprite;
+
     float spawnTimer;
     boolean isIconFalling = false;
     boolean isActive = false;
-
-    Texture texture;
-    Sprite textureSprite;
-
     float xSpeed, ySpeed;
     long startTime;
     long upgradeDuration = 10_000;
@@ -139,5 +139,9 @@ public class ShootingUpgrade {
         } else if (textureSprite.getY() + textureSprite.getHeight() <= 0) {
             isIconFalling = false;
         }
+    }
+
+    public Texture getTexture() {
+        return texture;
     }
 }

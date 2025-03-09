@@ -21,32 +21,32 @@ import static io.github.some_example_name.BouncingBallGame.WORLD_HEIGHT;
 import static io.github.some_example_name.BouncingBallGame.WORLD_WIDTH;
 
 public class GameScreen extends ScreenAdapter {
-    public final static float PADDLE_WIDTH = 100f;
-    public final static float PADDLE_HEIGHT = 20f;
+    private final static float PADDLE_WIDTH = 100f;
+    private final static float PADDLE_HEIGHT = 20f;
 
-    public final static float BALL_RADIUS = 8f;
-    public final static float BALL_X_SPEED = 400f;
-    public final static float BALL_Y_SPEED = 400f;
+    private final static float BALL_RADIUS = 8f;
+    private final static float BALL_X_SPEED = 400f;
+    private final static float BALL_Y_SPEED = 400f;
 
-    public final static float UPGRADE_X_SPEED = 400f;
-    public final static float UPGRADE_Y_SPEED = 400f;
+    private final static float UPGRADE_X_SPEED = 400f;
+    private final static float UPGRADE_Y_SPEED = 400f;
 
-    public final static float BLOCK_WIDTH = 81f;
-    public final static float BLOCK_HEIGHT = 23f;
-    public final static float BLOCK_SPACE_BETWEEN = 5f;
+    private final static float BLOCK_WIDTH = 81f;
+    private final static float BLOCK_HEIGHT = 23f;
+    private final static float BLOCK_SPACE_BETWEEN = 5f;
 
-    final BouncingBallGame game;
-    SpriteBatch batch;
+    private final BouncingBallGame game;
+    private final SpriteBatch batch;
 
-    Texture backgroundTexture;
-    Sprite backgroundSprite;
+    private final Texture backgroundTexture;
+    private final Sprite backgroundSprite;
 
-    Ball ball;
-    Paddle paddle;
-    Array<Block> blocks;
-    ShapeRenderer shapeRenderer;
-    Viewport viewport;
-    ShootingUpgrade shootingUpgrade;
+    private final Ball ball;
+    private final Paddle paddle;
+    private final Array<Block> blocks;
+    private final  ShapeRenderer shapeRenderer;
+    private final Viewport viewport;
+    private final ShootingUpgrade shootingUpgrade;
 
     boolean ballMoving = false;
 
@@ -143,6 +143,10 @@ public class GameScreen extends ScreenAdapter {
     public void dispose() {
         shapeRenderer.dispose();
         backgroundTexture.dispose();
+        ball.getTexture().dispose();
+        paddle.getTexture().dispose();
+        shootingUpgrade.getTexture().dispose();
+        blocks.forEach(b -> b.getTexture().dispose());
     }
 
     @Override

@@ -1,9 +1,7 @@
 package io.github.some_example_name.screen;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -13,11 +11,11 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import io.github.some_example_name.BouncingBallGame;
 
 public class GameOverScreen extends ScreenAdapter {
-    final BouncingBallGame game;
+    private final BouncingBallGame game;
 
-    Texture gameOverTexture;
-    Sprite gameOverSprite;
-    Viewport viewport;
+    private final Texture gameOverTexture;
+    private final Sprite gameOverSprite;
+    private final Viewport viewport;
 
     public GameOverScreen(BouncingBallGame game) {
         this.game = game;
